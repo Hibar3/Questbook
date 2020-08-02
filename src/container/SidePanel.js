@@ -1,6 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import Link from 'next/link';
 import {
     AppBar, Divider, IconButton, Toolbar, Button, Typography, Hidden,
     Drawer, MenuItem, List, ListItem, ListItemIcon, ListItemText
@@ -14,6 +13,10 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const drawerWidth = 240;
+
+const toRoute = () => {
+
+};
 
 export default function SidePanel() {
     const classes = useStyles();
@@ -33,16 +36,19 @@ export default function SidePanel() {
             <div className={classes.toolbar} />
             <Divider />
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                {['Home', 'Quest', 'Handbook', 'Message'].map((text, index) => (
                     <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
+                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />} </ListItemIcon>
+
+                        <Link as={'/' + [text] + '/main'} href={'/[' + [text] + ']/[main]'}>
+                            <ListItemText primary={text} />
+                        </Link>
                     </ListItem>
                 ))}
             </List>
             <Divider />
             <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                {['Status', 'Settings'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                         <ListItemText primary={text} />
@@ -50,6 +56,7 @@ export default function SidePanel() {
                 ))}
             </List>
         </div>
+
     )
 }
 
