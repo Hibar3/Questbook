@@ -1,22 +1,22 @@
 import Head from 'next/head'
+import clsx from 'clsx';
 import styles from '../styles/Home.module.css'
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { AppBar, IconButton, Toolbar, Button, Typography, Hidden, Drawer, MenuItem } from "@material-ui/core"
 
 // @material-ui/icons
 import { Menu } from "@material-ui/icons";
 // core components
+import NavBar from "./NavBar";
 
 // Sections for this page
 
 const dashboardRoutes = [];
-
-const useStyles = makeStyles(styles);
 
 export function HomePage() {
     const classes = useStyles();
@@ -27,28 +27,23 @@ export function HomePage() {
                 <title>Questbook</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <AppBar position="static" style={{ backgroundColor: "#34d925" }}>
-                <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" >
-                        <Menu
-                            id="fade-menu"
 
-                        >
-                            <MenuItem >Profile</MenuItem>
-                            <MenuItem >My account</MenuItem>
-                            <MenuItem>Logout</MenuItem>
-                        </Menu>
-                    </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                        News
-                    </Typography>
-                    <Button color="inherit">Login</Button>
-                </Toolbar>
-
-            </AppBar>
-
-
-
+            <NavBar />
+            <div
+            ><p>Sub-components and content here</p>
+            </div>
         </div>
     );
 }
+
+
+const useStyles = makeStyles((theme) => ({
+    customTitle: {
+        textAlign: 'center',
+    },
+
+    login: {
+        display: 'flex',
+        color: 'red'
+    }
+}));
