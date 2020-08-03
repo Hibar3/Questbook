@@ -40,7 +40,7 @@ export default function SidePanel() {
                     <ListItem button key={text}>
                         <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />} </ListItemIcon>
 
-                        <Link as={'/' + [text] + '/main'} href={'/[' + [text] + ']/[main]'}>
+                        <Link as={'/' + [text] + '/main'} href={'/[' + [text] + ']/main'}>
                             <ListItemText primary={text} />
                         </Link>
                     </ListItem>
