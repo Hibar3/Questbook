@@ -15,7 +15,7 @@ import MailIcon from "@material-ui/icons/Mail";
 
 import ClippedPanel from "./ClippedPanel";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 export default function ClippedDrawer() {
   const classes = useStyles();
@@ -23,23 +23,26 @@ export default function ClippedDrawer() {
   return (
     <div>
       <CssBaseline />
-      <AppBar position="relative" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" noWrap>
-            Clipped drawer
+            Quest
           </Typography>
         </Toolbar>
       </AppBar>
-
-      <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <ClippedPanel />
-      </Drawer>
+      <div>
+        {/* <Drawer
+          className={classes.drawer}
+          variant="persistent"
+          open={true}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+        >
+          <Toolbar />
+          <ClippedPanel />
+        </Drawer> */}
+      </div>
     </div>
   );
 }
@@ -57,7 +60,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     drawer: {
       width: drawerWidth,
-      marginTop: "250px",
     },
     drawerPaper: {
       width: drawerWidth,
@@ -69,5 +71,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
       padding: theme.spacing(3),
     },
+
+    toolbar: theme.mixins.toolbar,
   })
 );
