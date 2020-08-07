@@ -11,21 +11,16 @@ import {
   AppBar,
   IconButton,
   Toolbar,
-  Button,
-  Typography,
-  Hidden,
-  Drawer,
-  MenuItem,
+  Button
 } from "@material-ui/core";
 
 // @material-ui/icons
 import { Menu } from "@material-ui/icons";
 // core components
-import NavBar from "../components/NavBar.tsx";
+import NavBar from "../components/NavBar";
 
 // Sections for this page
 
-const dashboardRoutes = [];
 
 export function HomePage() {
   const classes = useStyles();
@@ -40,6 +35,7 @@ export function HomePage() {
       <NavBar />
       <div>
         <p>Sub-components and content here</p>
+        
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Paper from '@material-ui/core/Paper';
 import {
   Chart,
@@ -11,21 +10,14 @@ import {
 import { withStyles } from '@material-ui/core/styles';
 import { Stack, Animation } from '@devexpress/dx-react-chart';
 
-import { olimpicMedals as data } from '../demo-data/data-visualization';
-
 import { ProjectType } from "../../api/ProjectType";
 
 export interface mainProps {
   projectList?: ProjectType[];
 }
 
-
-
-
-export default function Demo({ projectList }: mainProps) {
-  console.log(data);
+export default function Graph({ projectList }: mainProps) {
   console.log(projectList)
-  
     return (
       <Paper>
         <Chart
@@ -35,19 +27,19 @@ export default function Demo({ projectList }: mainProps) {
           <ValueAxis />
 
           <BarSeries
-            name="Gold Medals"
+            name="Story"
             valueField="high"
             argumentField="name"
             color="#ffd700"
           />
           <BarSeries
-            name="Silver Medals"
+            name="Task"
             valueField="medium"
             argumentField="name"
             color="#c0c0c0"
           />
           <BarSeries
-            name="Bronze Medals"
+            name="Bugs"
             valueField="low"
             argumentField="name"
             color="#cd7f32"
@@ -62,7 +54,7 @@ export default function Demo({ projectList }: mainProps) {
   
 }
 
-Demo.getInitialProps = async () => {
+Graph.getInitialProps = async () => {
   const res = await fetch("http://localhost:4001/tasks");
   const projectList: ProjectType[] | undefined = await res.json();
   console.log( projectList );
