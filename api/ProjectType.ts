@@ -1,6 +1,6 @@
-export interface ProjecType {
-  country: string;
-  gold: number;
-  silver: number;
-  bronze: number;
+export interface ProjectType {
+  name: string;
+  high: number;
+  medium: number;
+  low: number;
 }

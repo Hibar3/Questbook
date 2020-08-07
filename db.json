@@ -1,72 +1,40 @@
 {
-  "vehicles": [
+
+  "tasks": [
     {
-      "vehicle": "Car",
-      "ownerName": "Bruno Antunes",
-      "details": "some detail about Bruno's Car"
+      "name": "Adam",
+      "high": 7,
+      "medium": 3,
+      "low": 6
     },
     {
-      "vehicle": "Bike",
-      "ownerName": "Bruno Antunes",
-      "details": "some detail about Bruno's Bike"
+      "name": "Eddie",
+       "high": 3,
+      "medium": 5,
+      "low": 7
     },
     {
-      "vehicle": "Bike",
-      "ownerName": "John Doe",
-      "details": "some detail bile"
+      "name": "Abu",
+      "high": 2,
+      "medium": 5,
+      "low": 3
     },
     {
-      "vehicle": "Airplane",
-      "ownerName": "Bill Gates",
-      "details": "some detail Bill Gates"
+      "name": "Mac",
+      "high": 4,
+      "medium": 5,
+      "low": 2
     },
     {
-      "vehicle": "SpaceX",
-      "ownerName": "Elon Musk",
-      "details": "some detail Elon"
+      "name": "Gin",
+       "high": 3,
+       "medium": 3,
+       "low": 4
     }
+	
   ],
 
   "projects": [
-    {
-      "country": "USA",
-      "gold": 36,
-      "silver": 38,
-      "bronze": 36
-    },
-    {
-      "country": "China",
-      "gold": 51,
-      "silver": 21,
-      "bronze": 28
-    },
-    {
-      "country": "Russia",
-      "gold": 23,
-      "silver": 21,
-      "bronze": 28
-    },
-    {
-      "country": "Britain",
-      "gold": 19,
-      "silver": 13,
-      "bronze": 15
-    },
-    {
-      "country": "Australia",
-      "gold": 14,
-      "silrve": 15,
-      "bronze": 17
-    },
-    {
-      "country": "Germany",
-      "gold": 16,
-      "silver": 10,
-      "bronze": 15
-    }
-  ],
-
-  "task": [
     {
       "project": "Project Name",
       "teamName": "team Name",
