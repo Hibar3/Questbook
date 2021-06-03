@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-
 import {
   AppBar,
   Divider,
@@ -15,22 +15,18 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@material-ui/core";
-
 import CssBaseline from "@material-ui/core/CssBaseline";
-
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
-
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-
-import SidePanel from "./SidePanel.tsx";
+import SidePanel from "./SidePanel";
 
 function NavBar(props) {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
